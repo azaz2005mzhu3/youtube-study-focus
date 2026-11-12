@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>YouTube Study Focus</title>
+    <link rel="stylesheet" href="popup.css">
+  </head>
+  <body>
+    <main>
+      <h1>YouTube Study Focus</h1>
+      <p id="page-message" role="status">Checking this page…</p>
+
+      <section id="controls" hidden>
+        <button id="focus-toggle" type="button" aria-pressed="false" disabled>
+          Turn Focus Mode on
+        </button>
+        <p id="focus-status">Focus Mode is off.</p>
+
+        <form id="timer-form" novalidate>
+          <label for="duration">Study timer (1–180 minutes)</label>
+          <div class="timer-entry">
+            <input id="duration" name="duration" type="text" inputmode="numeric" value="25" autocomplete="off">
+            <button type="submit">Start timer</button>
+          </div>
+        </form>
+        <p id="timer-message" role="status">No timer running.</p>
+        <p id="timer-error" role="alert" hidden></p>
+        <p id="remaining-time" aria-live="polite" hidden></p>
+        <p id="settings-message" role="alert" hidden></p>
+      </section>
+    </main>
+    <script src="popup.js"></script>
+  </body>
+</html>

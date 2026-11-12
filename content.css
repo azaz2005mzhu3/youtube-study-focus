@@ -1,0 +1,6 @@
+html.study-focus-mode ytd-watch-next-secondary-results-renderer,
+html.study-focus-mode #related,
+html.study-focus-mode ytd-comments,
+html.study-focus-mode #comments {
+  display: none !important;
+}

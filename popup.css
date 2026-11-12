@@ -1,0 +1,80 @@
+:root {
+  color-scheme: light;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 280px;
+  padding: 16px;
+  color: #202124;
+  background: #fff;
+}
+
+main {
+  display: grid;
+  gap: 12px;
+}
+
+h1 {
+  margin: 0;
+  font-size: 18px;
+}
+
+p {
+  margin: 0;
+  line-height: 1.4;
+}
+
+button,
+input {
+  min-height: 36px;
+  font: inherit;
+}
+
+button {
+  padding: 6px 10px;
+  border: 1px solid #185abc;
+  border-radius: 4px;
+  color: #fff;
+  background: #1a73e8;
+  cursor: pointer;
+}
+
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+button:focus-visible,
+input:focus-visible {
+  outline: 3px solid #174ea6;
+  outline-offset: 2px;
+}
+
+input {
+  box-sizing: border-box;
+  width: 72px;
+  padding: 6px;
+}
+
+#controls {
+  display: grid;
+  gap: 12px;
+}
+
+.timer-entry {
+  display: flex;
+  gap: 8px;
+  margin-top: 6px;
+}
+
+#settings-message,
+#timer-error {
+  color: #b3261e;
+}
+
+#timer-error {
+  font-weight: 600;
+}
