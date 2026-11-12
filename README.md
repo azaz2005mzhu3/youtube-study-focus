@@ -34,7 +34,7 @@ The repository's GitHub Actions workflow publishes `index.html` to GitHub Pages 
 
 ## Tests
 
-These are the proposal's acceptance tests. **They have not yet been run in Chrome from a ZIP downloaded from the repository.** Run each one from that installed copy and replace its status with what happened before submission.
+These are the proposal's acceptance tests. I created and extracted a ZIP of the pushed commit and verified the manifest and referenced files. The available headless Chrome launch rejected its unpacked-extension command-line flags, so the extension was not installed and none of these UI acceptance tests has been run. Run each one from a ZIP downloaded from the repository and replace its status with what happened before submission.
 
 - **Empty:** On a fresh YouTube video, open the popup. Expected: Focus Mode is off, the duration defaults to 25 minutes, and recommendations and comments are visible. **Not run yet.**
 - **In use:** Turn Focus Mode on while watching a YouTube video. Expected: the popup shows it is on and the recommendation/sidebar and comments sections disappear. **Not run yet.**
