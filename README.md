@@ -1,5 +1,7 @@
 # YouTube Study Focus
 
+> I wish my browser would hide YouTube's recommendations and comments when I am on a YouTube video.
+
 YouTube Study Focus hides YouTube recommendations and comments so **Alice Zhu**, a college student who watches tutorials while studying, can focus instead of following distractions.
 
 ## What it does
@@ -11,7 +13,7 @@ The content script runs only on `https://www.youtube.com/*`, because its page st
 ## Permissions
 
 - `storage` saves the Focus Mode setting and timer end time so they remain available after closing the popup or refreshing YouTube.
-- `tabs` reads the active tab's URL so the popup can explain when it is opened on an unsupported page, including `chrome://extensions`.
+- `activeTab` lets the popup read the current tab's URL, only for the moment the user opens the popup, so it can tell whether that page is YouTube or an unsupported page (including `chrome://extensions`). This is narrower than the `tabs` permission, which would allow reading every open tab at any time.
 - The content script's host match is limited to `https://www.youtube.com/*`; no additional site access is requested.
 
 ## Install in Chrome
@@ -34,14 +36,16 @@ The repository's GitHub Actions workflow publishes `index.html` to GitHub Pages 
 
 ## Tests
 
-These are the proposal's acceptance tests. I created and extracted a ZIP of the pushed commit and verified the manifest and referenced files. The available headless Chrome launch rejected its unpacked-extension command-line flags, so the extension was not installed and none of these UI acceptance tests has been run. Run each one from a ZIP downloaded from the repository and replace its status with what happened before submission.
+These are the proposal's acceptance tests, run from a ZIP downloaded from this repository and loaded with **Load unpacked**, the same way a classmate would install it.
 
-- **Empty:** On a fresh YouTube video, open the popup. Expected: Focus Mode is off, the duration defaults to 25 minutes, and recommendations and comments are visible. **Not run yet.**
-- **In use:** Turn Focus Mode on while watching a YouTube video. Expected: the popup shows it is on and the recommendation/sidebar and comments sections disappear. **Not run yet.**
-- **Unsupported page:** Open the popup on a normal non-YouTube page, then on `chrome://extensions`. Expected: each shows the unsupported-page message and does not offer a working page toggle. **Not run yet.**
-- **Invalid input:** On YouTube, submit blank, `1.5`, `0`, and `181` as timer values. Expected: every value is rejected with a whole-number range message and none starts a countdown. **Not run yet.**
-- **Persistence:** Turn Focus Mode on, refresh YouTube, and reopen the popup. Expected: recommendations/comments remain hidden and the popup still shows Focus Mode on. **Not run yet.**
-- **Timer:** Start a 1-minute timer, close the popup, wait at least 10 seconds, and reopen it. Expected: less than 1 minute remains. Wait for expiry and reopen. Expected: the timer is inactive and shows no negative time. **Not run yet.**
+- **Empty:** On a fresh YouTube video, open the popup. Expected: Focus Mode is off, the duration defaults to 25 minutes, and recommendations and comments are visible.
+- **In use:** Turn Focus Mode on while watching a YouTube video. Expected: the popup shows it is on and the recommendation/sidebar and comments sections disappear.
+- **Unsupported page:** Open the popup on a normal non-YouTube page, then on `chrome://extensions`. Expected: each shows the unsupported-page message and does not offer a working page toggle.
+- **Invalid input:** On YouTube, submit blank, `1.5`, `0`, and `181` as timer values. Expected: every value is rejected with a whole-number range message and none starts a countdown.
+- **Persistence:** Turn Focus Mode on, refresh YouTube, and reopen the popup. Expected: recommendations/comments remain hidden and the popup still shows Focus Mode on.
+- **Timer:** Start a 1-minute timer, close the popup, wait at least 10 seconds, and reopen it. Expected: less than 1 minute remains. Wait for expiry and reopen. Expected: the timer is inactive and shows no negative time.
+
+**Status:** not yet run. This environment cannot launch a real Chrome window to load an unpacked extension (no Node.js/Python toolchain, and the sandbox's embedded browser blocks `chrome://` pages), so I could not perform these installs myself. I reviewed the manifest and traced each test through `popup.js`, `content.js`, and `content.css` and did not find a logic gap, but that is not the same as running them. **Before you submit, please run all six tests yourself from a downloaded ZIP** (see Install steps above) and replace this status line with what actually happened, fixing anything that fails.
 
 ## User test
 

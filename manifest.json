@@ -3,6 +3,13 @@
   "name": "YouTube Study Focus",
   "version": "1.0.0",
   "description": "Hide YouTube recommendations and comments while you study.",
+  "permissions": [
+    "storage",
+    "activeTab"
+  ],
+  "action": {
+    "default_popup": "popup.html"
+  },
   "content_scripts": [
     {
       "matches": [
@@ -10,6 +17,9 @@
       ],
       "js": [
         "content.js"
+      ],
+      "css": [
+        "content.css"
       ],
       "run_at": "document_idle"
     }
