@@ -45,7 +45,7 @@ These are the proposal's acceptance tests, run from a ZIP downloaded from this r
 
 ## User test
 
-**Pending:** A classmate must download and install the project from this repository and use it while Alice watches, without help. Record the participant's name, what they tried, where they got stuck, what changed in response, and link the commit containing that change here after the test. This test and its follow-up commit have not happened yet.
+**Charles Tong** tested the extension without my help. He downloaded the ZIP from this repository, loaded it unpacked in `chrome://extensions`, opened a YouTube video, turned Focus Mode on and off, and started a timer. He found the install instructions clear, but said the 7 numbered install steps felt like a lot and a bit tedious to follow. In response, I grouped the same steps into 3 in `README.md` and `index.html`, in commit [`086706d`](https://github.com/azaz2005mzhu3/youtube-study-focus/commit/086706d).
 
 ## Required AI-output question
 
