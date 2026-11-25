@@ -18,13 +18,9 @@ The content script runs only on `https://www.youtube.com/*`, because its page st
 
 ## Install in Chrome
 
-1. Click **Code** on this repository's GitHub page.
-2. Click **Download ZIP**.
-3. Unzip the downloaded file.
-4. Open `chrome://extensions`.
-5. Turn on **Developer mode**.
-6. Click **Load unpacked**.
-7. Pick the unzipped folder that holds `manifest.json`.
+1. On this repository's GitHub page, click **Code → Download ZIP**, then unzip the downloaded file.
+2. Open `chrome://extensions` and turn on **Developer mode** (top right).
+3. Click **Load unpacked** and pick the unzipped folder that holds `manifest.json`.
 
 Open a YouTube page, click the extension icon, then turn Focus Mode on or start a timer.
 
